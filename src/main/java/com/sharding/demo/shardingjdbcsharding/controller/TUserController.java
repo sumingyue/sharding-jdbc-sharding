@@ -23,13 +23,15 @@ public class TUserController {
      * @return
      * @throws Exception
      */
-    @GetMapping(value = "/add")
-    public void saveWhitelist() {
-        TUser tUser = new TUser();
-        tUser.setId(11);
-        tUser.setPassword("18686713853");
-        tUser.setUser_name("smy");
-        tUserRepository.insert(tUser);
+    @GetMapping(value = "/addBatch")
+    public void addBatch() {
+        for(int i=1;i<100;i++) {
+            TUser tUser = new TUser();
+            tUser.setId(i);
+            tUser.setPassword("11111111111");
+            tUser.setUser_name("smy");
+            tUserRepository.insert(tUser);
+        }
     }
     /**
      * 根据班级编号创建布卡课程
